@@ -1,0 +1,37 @@
+:root{
+    /* Criando variáveis em css */
+    --primary-color: #3a5a40;
+    --light-color: #588157;
+    --lighest-color: #a3b18a;
+    --lighest-color-secundary: #D9E5D9;
+}
+
+#modal{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-background{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    /* fazendo com que esse elemento fique na camada inferior: */
+    z-index: 0;
+    /* mudando a opacidade: */
+    opacity: 0.4;
+}
+
+#modal-container{
+    /* fazendo com que esse elemento fiue na camada superior: */
+    z-index: 1;
+    background-color: var(--lighest-color-secundary);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+}
