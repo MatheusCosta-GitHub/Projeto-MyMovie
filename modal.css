@@ -17,6 +17,19 @@
     align-items: center;
 }
 
+.modal-hidden {
+    visibility:hidden;
+    /* transition é o elemento que é responsável pela forma que vai ocorrer a transição;
+        Neste caso, pedi para que TODAS as transições levassem 0.3 segundos e que ocorram de forma suave; */
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.modal-open {
+    visibility:visible;
+    opacity: 1;
+}
+
 #modal-background{
     width: 100%;
     height: 100%;
