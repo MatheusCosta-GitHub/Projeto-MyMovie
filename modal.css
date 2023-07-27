@@ -26,6 +26,7 @@
     z-index: 0;
     /* mudando a opacidade: */
     opacity: 0.4;
+    
 }
 
 #modal-container{
@@ -34,4 +35,41 @@
     background-color: var(--lighest-color-secundary);
     padding: 1rem 3rem;
     border-radius: 10px;
+}
+
+#movie-title{
+    /* display: flex; */
+    padding: 1rem 0;
+}
+
+#modal-body{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+#movie-poster{
+    border-radius: 10px;
+}
+
+#movie-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 350px;
+}
+
+#add-to-list{
+    border:3px solid var(--lighest-color);
+    padding: 0.2rem;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px #000;
+}
+
+#add-to-list:hover,
+#add-to-list:focus{
+    background-color: var(--lighest-color);
+    color: var(--lighest-color-secundary);
 }
