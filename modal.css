@@ -61,6 +61,10 @@
     padding: 1rem 0;
 }
 
+#movie-plot{
+    padding: 1rem;
+}
+
 #movie-poster{
     border-radius: 10px;
 }

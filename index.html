@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MyMovies</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="modal.css"/>
+    <link rel="stylesheet" href="./src/notie-master/dist/notie.css"/>
 </head>
 
 <body>
@@ -52,61 +53,17 @@
         <article id="modal" class="modal-hidden">
 
             <section id="modal-background"></section>
-
-            <section id="modal-container">
-
-                <div id="movie-title">
-                    <h2>Guardians of the Galaxy Vol. 2</h2>
-                </div>
-
-                <section id="modal-body">
-
-                    <img id="movie-poster"
-                        src="https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
-                        alt="Poster do filme" />
-
-                    <div id="movie-info">
-
-                        <h3 id="movie-plot">
-
-                            The Guardians struggle to keep together as a team while dealing with their personal family
-                            issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
-
-                        </h3>
-
-                        <div id="movie-cast">
-
-                            <h4>Elenco:</h4>
-                            <h5>Chris Pratt, Zoe Saldana, Dave Bautista</h5>
-
-                        </div>
-
-                        <div id="movie-genre">
-
-                            <h4>Gênero:</h4>
-                            <h5>Action, Adventure, Comedy</h5>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="modal-footer">
-
-                    <button id="add-to-list">Adicionar a lista</button>
-
-                </section>
-
-            </section>
+            <section id="modal-container"></section>
 
         </article>
 
     </main>
 
+    <!-- colocando script.js antes para definir que esse arquivo será lido primeiro -->
     <script src="./script.js"></script>
     <script src="./modal.js"></script>
-    
+    <script src="./src/notie-master/dist/notie.js"></script>
+
 </body>
 
 </html>
