@@ -6,7 +6,8 @@ const movieYear = document.getElementById('movie-year');
 
 const movieListContainer = document.getElementById('movie-list');
 
-let movieList = [];
+//ou ele começa a lista vazia ou começa com o que tinha armazenado no localStorage:
+let movieList = JSON.parse(localStorage.getItem('movieList')) ?? [];
 
 // função que confere se a caixa de nome do filme está vazia ou não:
 function adaptMovieName() {
@@ -73,17 +74,18 @@ function addToList(data) {
     movieList.push(data);
     //chamando a função que atualiza a inteface:
     updateUI(data);
+    updateLocalStorage();
 }
 
 function updateUI(data) {
     movieListContainer.innerHTML +=`
-    <article id='movie-catalog imdbID${data.imdbID}'>
+    <article id='movie-catalog-imdbID${data.imdbID}'>
 
         <img 
         src="${data.Poster}"
         alt="${data.Title}"/>
 
-        <button class="remove-button"><i class="bi bi-trash"></i>Remover</button>
+        <button class="remove-button" onclick='{removeFilmFromList("${data.imdbID}")}'><i class="bi bi-trash"></i>Remover</button>
 
     </article>
     `
@@ -100,6 +102,21 @@ function isThisFilmAlreadyOnTheList(imdbID){
     return movieList.find(verifyList);
 }
 
+//função que remove filmes da lista:
+function removeFilmFromList(imdbID){
+    //usando uma arrow function para filtrar elementos da lista:
+    movieList = movieList.filter((movie) => movie.imdbID !== imdbID);
+    //removendo um elemento pelo seu ID:
+    document.getElementById(`movie-catalog-imdbID${imdbID}`).remove();
+    updateLocalStorage();
+}
+
+function updateLocalStorage(){
+    //colocando no armazenamento do navegador, um objeto JSON que vai guardar as informações da lista:
+    localStorage.setItem('movieList', JSON.stringify(movieList));
+}
+
+movieList.forEach(updateUI);
 
 //criando uma ação para quando clicar sobre o botão de pesquisa:
 searchButton.addEventListener('click', searchButtonClickHandler);
